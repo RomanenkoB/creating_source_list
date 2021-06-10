@@ -1,7 +1,6 @@
 from env import url, url_book
 import requests
 from bs4 import BeautifulSoup
-from lxml import html
 import random
 
 book = {
