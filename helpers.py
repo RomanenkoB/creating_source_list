@@ -16,7 +16,9 @@ book = {
 list_city = ["Москва", "Санкт-Петербург", "Самара", "Ростов-на-Дону", "Самара", "Казань", "Новосибирск", "Екатеринбург", "Воронеж"]
 
 
-def get_search_page(book_name, count):
+def get_book_source(book_name, count):
+    """ Данные берутся из сайта Лабиринт, если возникает эксепшен то увы извиняйте """
+
     r = requests.get(url=url.format(book_name))
     soup = BeautifulSoup(r.text, 'lxml')
     for i in range(count):
@@ -44,7 +46,6 @@ def get_search_page(book_name, count):
         print(result)
 
 
-
 def get_description(id):
     r = requests.get(url=url_book.format(id))
     soup = BeautifulSoup(r.text, 'lxml')
@@ -59,5 +60,3 @@ def get_description(id):
     isbn = description.find('div', class_="isbn").text
     return author, publisher, year, pages, isbn
 
-get_search_page("python", 5)
-# print(book)
