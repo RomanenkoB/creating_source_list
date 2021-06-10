@@ -3,6 +3,6 @@
 
 В комплекте идет рабочее окружение, поэтому для запуска достаточно прописать команды:
 ```python
-venv/Scripts/activate
+venv\Scripts\activate
 python3 main.py
 ```
