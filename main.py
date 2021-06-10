@@ -8,7 +8,10 @@ book = str(input("Введи книгу: "))
 count = int(input("Введи количество источников: "))
 print(" ")
 
-get_book_source(book, count)
+try:
+    get_book_source(book, count)
+except:
+    print("Извинись!")
 
 print(" ")
 input("Введи любой символ для выхода: ")
